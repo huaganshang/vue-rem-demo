@@ -1,0 +1,53 @@
+{
+  "name": "workbench",
+  "version": "1.0.0",
+  "description": "#运行步骤# 1、npm install 2、npm run dev 3、浏览器访问：http://localhost:8888",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development node ./webpack/dev.js",
+    "test-build": "npm run clean && cross-env NODE_ENV=test webpack --config ./webpack/test.js",
+    "pre-build": "npm run clean && cross-env NODE_ENV=prevProduction webpack -p --config ./webpack/prevProduction.js",
+    "dist-build": "npm run clean && cross-env NODE_ENV=production webpack -p --config ./webpack/build.js",
+    "clean": "rm -rf dist && npm install"
+  },
+  "author": "",
+  "license": "ISC",
+  "browserslist": [
+    "last 2 versions",
+    "ios >= 8",
+    "Android >= 4.1"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^7.2.2",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.5",
+    "html-webpack-plugin": "^2.30.1",
+    "less": "^3.0.4",
+    "less-loader": "^4.1.0",
+    "postcss-loader": "^2.0.9",
+    "postcss-px2rem": "^0.3.0",
+    "style-loader": "^0.19.0",
+    "url-loader": "^0.6.2",
+    "url-search-params": "^0.10.0",
+    "vue-loader": "^13.5.0",
+    "vue-template-compiler": "^2.5.9",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.9.7",
+    "webpack-merge": "^4.1.1"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "vue": "^2.5.9",
+    "vue-i18n": "^7.8.0",
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1"
+  }
+}
